@@ -3,6 +3,8 @@ package AutomationRestAPI.RestAssured;
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.json.simple.JSONObject;
 import org.testng.annotations.Test;
 
@@ -10,14 +12,16 @@ import io.restassured.http.ContentType;
 
 public class AutomatePost
 {
-@Test
+	 private static final Logger logger = LogManager.getLogger(AutomatePost.class);
+	@Test
     public void test_POSTRegSuccess() {
+		
         // Create JSON request body
         JSONObject request = new JSONObject();
         request.put("email", "eve.holt@reqres.in");
         request.put("password", "pistol");
 
-        System.out.println("Request Body: " + request.toJSONString());
+        logger.info("Request Body: " + request.toJSONString());
 
         // Set base URI
         baseURI = "https://reqres.in";
