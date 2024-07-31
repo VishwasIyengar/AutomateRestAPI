@@ -60,10 +60,10 @@ public class AmazonIPhonePurchaseTest
         WebElement proceedToCheckOut = driver.findElement(By.xpath("(//input[@aria-labelledby='attach-sidesheet-checkout-button-announce'])[1]"));
         proceedToCheckOut.click();
         
-        WebElement enterEmail = driver.findElement(By.xpath("(//input[@id='ap_email'])[1]"));
+        WebElement enterEmail = driver.findElement(By.xpath("(//input[@id='ap_email_login'])[1]"));
         enterEmail.sendKeys("vishwassv1995@gmail.com");
         
-        WebElement continueButton = driver.findElement(By.xpath("(//input[@id='continue'])[1]"));
+        WebElement continueButton = driver.findElement(By.xpath("(//input[@type='submit'])[1]"));
         continueButton.click();
         
         WebElement enterPassword = driver.findElement(By.xpath("(//input[@id='ap_password'])[1]"));
