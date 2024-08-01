@@ -60,16 +60,16 @@ public class AmazonIPhonePurchaseTest
         WebElement proceedToCheckOut = driver.findElement(By.xpath("(//input[@aria-labelledby='attach-sidesheet-checkout-button-announce'])[1]"));
         proceedToCheckOut.click();
         
-        WebElement enterEmail = driver.findElement(By.xpath("(//input[@id='ap_email_login'])[1]"));
+        WebElement enterEmail = driver.findElement(By.xpath("//input[@id='ap_email_login']"));
         enterEmail.sendKeys("vishwassv1995@gmail.com");
         
-        WebElement continueButton = driver.findElement(By.xpath("(//input[@type='submit'])[1]"));
+        WebElement continueButton = driver.findElement(By.xpath("//input[@type='submit']"));
         continueButton.click();
         
-        WebElement enterPassword = driver.findElement(By.xpath("(//input[@id='ap_password'])[1]"));
+        WebElement enterPassword = driver.findElement(By.xpath("//input[@id='ap_password']"));
         enterPassword.sendKeys("Vishu@2024");
         
-        WebElement signInButton = driver.findElement(By.xpath("(//input[@id='signInSubmit'])[1]"));
+        WebElement signInButton = driver.findElement(By.xpath("//input[@id='signInSubmit']"));
         signInButton.click();
         
         WebElement fullNameInput = driver.findElement(By.xpath("(//input[@id='address-ui-widgets-enterAddressFullName'])[1]"));
