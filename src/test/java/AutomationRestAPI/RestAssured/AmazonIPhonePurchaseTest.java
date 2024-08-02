@@ -99,7 +99,7 @@ public class AmazonIPhonePurchaseTest
          {
         	karnatakaOption.click();
          } 
-         catch (Exception e) 
+         catch (Exception e)
          {          
         	 JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
              jsExecutor.executeScript("arguments[0].scrollIntoView(true);", karnatakaOption);         
