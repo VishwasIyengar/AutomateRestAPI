@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-08-02T15:34:04 IST" name="Default suite" finished-at="2024-08-02T15:34:52 IST" duration-ms="48288">
+  <suite started-at="2024-08-02T17:17:16 IST" name="Default suite" finished-at="2024-08-02T17:17:52 IST" duration-ms="35899">
     <groups>
     </groups>
-    <test started-at="2024-08-02T15:34:04 IST" name="Default test" finished-at="2024-08-02T15:34:52 IST" duration-ms="48288">
-      <class name="AutomationRestAPI.RestAssured.PracticeForms">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:AutomationRestAPI.RestAssured.PracticeForms@24569dba]" started-at="2024-08-02T15:34:04 IST" name="setUp" finished-at="2024-08-02T15:34:07 IST" duration-ms="3252" status="PASS">
+    <test started-at="2024-08-02T17:17:16 IST" name="Default test" finished-at="2024-08-02T17:17:52 IST" duration-ms="35899">
+      <class name="AutomationRestAPI.RestAssured.DatePicker">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:AutomationRestAPI.RestAssured.DatePicker@8462f31]" started-at="2024-08-02T17:17:16 IST" name="setUp" finished-at="2024-08-02T17:17:18 IST" duration-ms="2717" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testPracticeFormAutomation()[pri:0, instance:AutomationRestAPI.RestAssured.PracticeForms@24569dba]" started-at="2024-08-02T15:34:07 IST" name="testPracticeFormAutomation" finished-at="2024-08-02T15:34:51 IST" duration-ms="44321" status="PASS">
+        <test-method signature="testDatePicker()[pri:0, instance:AutomationRestAPI.RestAssured.DatePicker@8462f31]" started-at="2024-08-02T17:17:18 IST" name="testDatePicker" finished-at="2024-08-02T17:17:51 IST" duration-ms="32643" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testPracticeFormAutomation -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:AutomationRestAPI.RestAssured.PracticeForms@24569dba]" started-at="2024-08-02T15:34:51 IST" name="tearDown" finished-at="2024-08-02T15:34:52 IST" duration-ms="628" status="PASS">
+        </test-method> <!-- testDatePicker -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:AutomationRestAPI.RestAssured.DatePicker@8462f31]" started-at="2024-08-02T17:17:51 IST" name="tearDown" finished-at="2024-08-02T17:17:52 IST" duration-ms="464" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- AutomationRestAPI.RestAssured.PracticeForms -->
+      </class> <!-- AutomationRestAPI.RestAssured.DatePicker -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
