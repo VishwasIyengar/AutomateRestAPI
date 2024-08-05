@@ -29,7 +29,7 @@ public class AmazonIPhonePurchaseTest
         driver.manage().window().maximize();
         driver.get("https://www.amazon.in");
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     	driver.manage().deleteAllCookies();
         
     }
