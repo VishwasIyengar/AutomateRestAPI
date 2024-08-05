@@ -26,6 +26,7 @@ public class AlertTest
         // Set the path to chromedriver executable
     	System.setProperty("webdriver.chrome.driver", "C:\\Users\\Hp\\Downloads\\chromedriver-win64\\chromedriver.exe");
         driver = new ChromeDriver();
+        driver.manage().window().maximize();
         driver.get("https://demoqa.com/alerts");
     }
     @Test

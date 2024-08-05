@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="AutomationRestAPI.RestAssured.PracticeForms">
+      <class name="AutomationRestAPI.RestAssured.AlertTest">
         <methods>
-          <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="testPracticeFormAutomation"/>
+          <include name="automateAlert"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- AutomationRestAPI.RestAssured.PracticeForms -->
+      </class> <!-- AutomationRestAPI.RestAssured.AlertTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
