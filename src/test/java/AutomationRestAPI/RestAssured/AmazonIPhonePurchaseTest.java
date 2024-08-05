@@ -1,5 +1,6 @@
 package AutomationRestAPI.RestAssured;
 
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -29,7 +30,7 @@ public class AmazonIPhonePurchaseTest
         driver.manage().window().maximize();
         driver.get("https://www.amazon.in");
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     	driver.manage().deleteAllCookies();
         
     }
@@ -99,7 +100,7 @@ public class AmazonIPhonePurchaseTest
          {
         	karnatakaOption.click();
          } 
-         catch (Exception e)
+         catch (Exception e) 
          {          
         	 JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
              jsExecutor.executeScript("arguments[0].scrollIntoView(true);", karnatakaOption);         

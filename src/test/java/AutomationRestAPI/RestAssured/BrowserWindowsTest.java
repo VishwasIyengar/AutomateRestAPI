@@ -51,18 +51,17 @@ public class BrowserWindowsTest
         Thread.sleep(5000);
     }
     
-    @AfterClass
-    public void tearDown() {
-        try {
-            if (driver != null) {
-                System.out.println("Closing the browser...");
-                driver.quit();
-                System.out.println("Browser closed.");
-            }
-        } catch (Exception e) {
-            System.err.println("Error occurred while closing the browser.");
-            e.printStackTrace();  // Print the stack trace for debugging
-        }
+	@AfterClass
+    public void tearDown() 
+	{
+        // Close the new tab
+        driver.close();
+
+        // Switch back to the main window
+        driver.switchTo().window(mainWindowHandle);
+
+        // Close the main window
+        driver.quit();
     }
 }
 

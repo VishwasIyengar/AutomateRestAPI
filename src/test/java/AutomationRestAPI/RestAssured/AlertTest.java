@@ -30,7 +30,7 @@ public class AlertTest
         driver.get("https://demoqa.com/alerts");
     }
     @Test
-    public void testMethod() throws InterruptedException {
+    public void automateAlert() throws InterruptedException {
         // Locate the button to trigger a simple alert
         WebElement clickMeButton = driver.findElement(By.id("alertButton"));
 
@@ -38,7 +38,7 @@ public class AlertTest
         clickMeButton.click();
 
         // Use WebDriverWait for expected conditions (alert presence)
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30)); // Set a timeout of 5 seconds
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5)); // Set a timeout of 5 seconds
         Alert alert = wait.until(ExpectedConditions.alertIsPresent());
 
         // Get the text from the alert
