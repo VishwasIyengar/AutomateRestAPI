@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-08-05T12:34:15 IST" name="Default suite" finished-at="2024-08-05T12:34:33 IST" duration-ms="18340">
+  <suite started-at="2024-08-05T20:09:50 IST" name="Default suite" finished-at="2024-08-05T20:10:26 IST" duration-ms="36180">
     <groups>
     </groups>
-    <test started-at="2024-08-05T12:34:15 IST" name="Default test" finished-at="2024-08-05T12:34:33 IST" duration-ms="18340">
-      <class name="AutomationRestAPI.RestAssured.BrowserWindowsTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:AutomationRestAPI.RestAssured.BrowserWindowsTest@24569dba]" started-at="2024-08-05T12:34:15 IST" name="setUp" finished-at="2024-08-05T12:34:27 IST" duration-ms="12398" status="PASS">
+    <test started-at="2024-08-05T20:09:50 IST" name="Default test" finished-at="2024-08-05T20:10:26 IST" duration-ms="36180">
+      <class name="AutomationRestAPI.RestAssured.AmazonIPhonePurchaseTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:AutomationRestAPI.RestAssured.AmazonIPhonePurchaseTest@3f4faf53]" started-at="2024-08-05T20:09:50 IST" name="setUp" finished-at="2024-08-05T20:09:55 IST" duration-ms="4913" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testNewTab()[pri:0, instance:AutomationRestAPI.RestAssured.BrowserWindowsTest@24569dba]" started-at="2024-08-05T12:34:27 IST" name="testNewTab" finished-at="2024-08-05T12:34:33 IST" duration-ms="5378" status="PASS">
+        <test-method signature="testIPhonePurchase()[pri:0, instance:AutomationRestAPI.RestAssured.AmazonIPhonePurchaseTest@3f4faf53]" started-at="2024-08-05T20:09:55 IST" name="testIPhonePurchase" finished-at="2024-08-05T20:10:25 IST" duration-ms="30630" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testNewTab -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:AutomationRestAPI.RestAssured.BrowserWindowsTest@24569dba]" started-at="2024-08-05T12:34:33 IST" name="tearDown" finished-at="2024-08-05T12:34:33 IST" duration-ms="470" status="PASS">
+        </test-method> <!-- testIPhonePurchase -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:AutomationRestAPI.RestAssured.AmazonIPhonePurchaseTest@3f4faf53]" started-at="2024-08-05T20:10:25 IST" name="tearDown" finished-at="2024-08-05T20:10:26 IST" duration-ms="576" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- AutomationRestAPI.RestAssured.BrowserWindowsTest -->
+      </class> <!-- AutomationRestAPI.RestAssured.AmazonIPhonePurchaseTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
