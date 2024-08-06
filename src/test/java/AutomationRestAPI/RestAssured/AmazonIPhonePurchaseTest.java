@@ -65,6 +65,8 @@ public class AmazonIPhonePurchaseTest {
         // Wait for the page to load completely
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@id='ap_email_login']")));
 
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("document.getElementById('ap_email_login').scrollIntoView();");
         WebElement enterEmail = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='ap_email_login']")));
         enterEmail.sendKeys("vishwassv1995@gmail.com");
 
