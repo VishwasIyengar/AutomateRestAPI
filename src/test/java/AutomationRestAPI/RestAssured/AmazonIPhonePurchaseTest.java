@@ -1,13 +1,7 @@
 package AutomationRestAPI.RestAssured;
 
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -91,6 +85,7 @@ public class AmazonIPhonePurchaseTest {
             city.sendKeys("BENGALURU");
 
             WebElement stateDropdown = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[@role='button'])[2]")));
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", stateDropdown);  // Scroll into view
             stateDropdown.click();
 
             WebElement karnatakaOption = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//a[normalize-space()='KARNATAKA'])[1]")));
