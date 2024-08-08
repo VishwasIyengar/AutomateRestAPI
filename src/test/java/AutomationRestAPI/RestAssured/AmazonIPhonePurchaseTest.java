@@ -27,11 +27,11 @@ public class AmazonIPhonePurchaseTest {
         driver.manage().window().maximize();
         driver.get("https://www.amazon.in");
         driver.manage().deleteAllCookies();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(30));  // Increase wait time
+        wait = new WebDriverWait(driver, Duration.ofSeconds(60));  // Increase wait time to 60 seconds
     }
 
     @Test
-    public void testIPhonePurchase() throws InterruptedException, IOException {
+    public void testIPhonePurchase() throws Exception {
         try {
             // Search for iPhone
             WebElement searchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='twotabsearchtextbox']")));
@@ -84,7 +84,7 @@ public class AmazonIPhonePurchaseTest {
             WebElement city = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//input[@id='address-ui-widgets-enterAddressCity'])[1]")));
             city.sendKeys("BENGALURU");
 
-            WebElement stateDropdown = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[@role='button'])[2]")));
+            WebElement stateDropdown = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@id='address-ui-widgets-enterAddressStateOrRegion']//span[@class='a-button-text a-declarative']")));
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", stateDropdown);  // Scroll into view
             stateDropdown.click();
 
@@ -97,25 +97,45 @@ public class AmazonIPhonePurchaseTest {
                 jsExecutor.executeScript("arguments[0].click();", karnatakaOption);
             }
 
+        } catch (TimeoutException e) {
+            handleTimeoutException(e);  // Handle TimeoutException separately
         } catch (Exception e) {
-            System.out.println(driver.getPageSource());  // Print page source for debugging
-            File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(screenshot, new File("error_screenshot.png"));  // Save screenshot
-            throw e;  // Re-throw the exception to ensure test fails
+            captureScreenshotAndThrow(e);  // Capture screenshot and re-throw exception for other errors
         }
 
         Thread.sleep(5000);
     }
 
+    // Method to handle TimeoutException separately
+    private void handleTimeoutException(TimeoutException e) throws IOException {
+        System.out.println("Timeout occurred: " + e.getMessage());
+        captureScreenshot("timeout_error_screenshot.png");
+        throw e;  // Re-throw the TimeoutException to ensure test fails
+    }
+
+    // Method to capture a screenshot and re-throw exception
+    private void captureScreenshotAndThrow(Exception e) throws Exception {
+        System.out.println("An error occurred: " + e.getMessage());
+        captureScreenshot("error_screenshot.png");
+        throw e;  // Re-throw the exception to ensure test fails
+    }
+
+    // Utility method to capture screenshots
+    private void captureScreenshot(String fileName) throws IOException {
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(screenshot, new File(fileName));  // Save screenshot
+    }
+
+    // Retrying to find an element with multiple attempts
     public WebElement retryingFindElement(By by) {
         WebElement element = null;
         int attempts = 0;
-        while(attempts < 3) {
+        while (attempts < 3) {
             try {
                 element = driver.findElement(by);
                 break;
-            } catch (Exception e) {
-                System.out.println("Attempt " + (attempts + 1) + " failed");
+            } catch (NoSuchElementException e) {
+                System.out.println("Attempt " + (attempts + 1) + " failed: " + e.getMessage());
             }
             attempts++;
         }
