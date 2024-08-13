@@ -39,6 +39,7 @@ public class AmazonIPhonePurchaseTest {
 
             WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='nav-search-submit-button']")));
             searchButton.click();
+            
 
             WebElement secondExpensiveIPhone = wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Apple iPhone 15 Plus (128 GB) - Black")));
             secondExpensiveIPhone.click();
