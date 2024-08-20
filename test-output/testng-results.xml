@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-08-20T20:15:01 IST" name="Default suite" finished-at="2024-08-20T20:15:23 IST" duration-ms="21695">
+  <suite started-at="2024-08-20T20:15:51 IST" name="Default suite" finished-at="2024-08-20T20:16:25 IST" duration-ms="34098">
     <groups>
     </groups>
-    <test started-at="2024-08-20T20:15:01 IST" name="Default test" finished-at="2024-08-20T20:15:23 IST" duration-ms="21695">
-      <class name="AutomationRestAPI.RestAssured.AutomateRTCET">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:AutomationRestAPI.RestAssured.AutomateRTCET@3f4faf53]" started-at="2024-08-20T20:15:01 IST" name="setUp" finished-at="2024-08-20T20:15:07 IST" duration-ms="5533" status="PASS">
+    <test started-at="2024-08-20T20:15:51 IST" name="Default test" finished-at="2024-08-20T20:16:25 IST" duration-ms="34098">
+      <class name="AutomationRestAPI.RestAssured.AmazonIPhonePurchaseTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:AutomationRestAPI.RestAssured.AmazonIPhonePurchaseTest@66982506]" started-at="2024-08-20T20:15:51 IST" name="setUp" finished-at="2024-08-20T20:15:56 IST" duration-ms="5218" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testAllLinks()[pri:0, instance:AutomationRestAPI.RestAssured.AutomateRTCET@3f4faf53]" started-at="2024-08-20T20:15:07 IST" name="testAllLinks" finished-at="2024-08-20T20:15:23 IST" duration-ms="15734" status="PASS">
+        <test-method signature="testIPhonePurchase()[pri:0, instance:AutomationRestAPI.RestAssured.AmazonIPhonePurchaseTest@66982506]" started-at="2024-08-20T20:15:56 IST" name="testIPhonePurchase" finished-at="2024-08-20T20:16:25 IST" duration-ms="28483" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testAllLinks -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:AutomationRestAPI.RestAssured.AutomateRTCET@3f4faf53]" started-at="2024-08-20T20:15:23 IST" name="tearDown" finished-at="2024-08-20T20:15:23 IST" duration-ms="379" status="PASS">
+        </test-method> <!-- testIPhonePurchase -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:AutomationRestAPI.RestAssured.AmazonIPhonePurchaseTest@66982506]" started-at="2024-08-20T20:16:25 IST" name="tearDown" finished-at="2024-08-20T20:16:25 IST" duration-ms="346" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- AutomationRestAPI.RestAssured.AutomateRTCET -->
+      </class> <!-- AutomationRestAPI.RestAssured.AmazonIPhonePurchaseTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
