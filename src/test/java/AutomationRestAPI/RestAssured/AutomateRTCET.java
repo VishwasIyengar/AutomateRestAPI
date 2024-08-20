@@ -31,6 +31,9 @@ public class AutomateRTCET
   @Test
   public void testAllLinks() throws InterruptedException 
   {
+	  WebElement scheduleCall = driver.findElement(By.xpath("//span[contains(text(),'Schedule a Call')]"));
+	  scheduleCall.click();
+	  
 	  WebElement aboutUs = driver.findElement(By.xpath("//a[normalize-space()='About Us']"));
 	  aboutUs.click();
 	  
@@ -48,6 +51,8 @@ public class AutomateRTCET
 	  
 	  WebElement applyNow = driver.findElement(By.xpath("//span[@class='cus-nav']"));
 	  applyNow.click();
+	
+	  
 	  
       Thread.sleep(5000);
   }
