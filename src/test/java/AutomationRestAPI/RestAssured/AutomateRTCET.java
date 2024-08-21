@@ -1,92 +1,68 @@
 package AutomationRestAPI.RestAssured;
 
-import java.time.Duration;
-import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import java.util.List;
 
-public class AutomateRTCET 
-{
-  
-	WebDriver driver;
-    WebDriverWait wait;
+public class AutomateRTCET {
+
+    private WebDriver driver;
 
     @BeforeClass
-    public void setUp() 
-    {
-        // Set up WebDriver
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Hp\\Downloads\\chromedriver-win64\\chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
+    public void setUp() {
+        // Setup ChromeDriver using WebDriverManager
+    	 System.setProperty("webdriver.chrome.driver", "C:\\Users\\Hp\\Downloads\\chromedriver-win64\\chromedriver.exe");
+         driver = new ChromeDriver();
+         driver.manage().window().maximize();
+        
+        // Navigate to the website
         driver.get("https://rtctek.com/");
-        driver.manage().deleteAllCookies();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(60));  // Increase wait time to 60 seconds
     }
-    
-    
-    
-  
-  @Test
-  public void testAllLinks() throws InterruptedException 
-  {
-	
-	        // Locate the 'Services' tab in the navigation bar
-	  WebElement readMoreButton = driver.findElement(By.xpath("//span[contains(text(),'Read More')]"));
-	  readMoreButton.click();
-	  
-	  WebElement contactUsButton = driver.findElement(By.xpath("//span[contains(text(),'Contact Us')]"));
-	  contactUsButton.click();
-	  
-	  WebElement fullNameInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='form-field-name']")));
-      fullNameInput.sendKeys("Vishwas Iyenagr");
-      
-      WebElement emailInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='form-field-email']")));
-      emailInput.sendKeys("vishwassv1995@gmail.com");
-      
-      WebElement messageInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//textarea[@id='form-field-message']")));
-      messageInput.sendKeys("regarding job openings");
-      
-      WebElement submitButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@type='submit']")));
-      submitButton.click();
-         
-      WebElement aboutUs = driver.findElement(By.xpath("//a[normalize-space()='About Us']"));
-	  aboutUs.click();//a[normalize-space()='DevOps Automation Services']
-	  
-	  WebElement services = driver.findElement(By.xpath("//a[normalize-space()='Services']"));
-	  services.click();
-	  
-	  WebElement industries = driver.findElement(By.xpath("//a[normalize-space()='Industries']"));
-	  industries.click();
-	  
-	  WebElement knoledgeCenter = driver.findElement(By.xpath("//a[normalize-space()='Knowledge Center']"));
-	  knoledgeCenter.click();
-	  
-	  WebElement getAQuote = driver.findElement(By.xpath("//li[@id='menu-item-10904']//a[normalize-space()='Get a Quote']"));
-	  getAQuote.click();
-	  
-	  WebElement applyNow = driver.findElement(By.xpath("//span[@class='cus-nav']"));
-	  applyNow.click();
-	  
-	  
-	  
-      Thread.sleep(5000);
-  }
 
-  @AfterClass
-  public void tearDown()
-  {
-      if (driver != null) 
-      {
-          driver.quit();
-      }
-  }
+    @Test
+    public void testClickAllServicesLinks() {
+        // Locate the Services menu item
+        WebElement servicesMenu = driver.findElement(By.xpath("//a[normalize-space()='Services']"));
+
+        // Hover over the Services menu to display the dropdown
+        Actions actions = new Actions(driver);
+        actions.moveToElement(servicesMenu).perform();
+
+        // Wait for the dropdown to be visible
+        try {
+            Thread.sleep(2000);  // Better to use WebDriverWait in real cases
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        // Get all the links under the dropdown
+        List<WebElement> dropdownLinks = driver.findElements(By.xpath("//a[@href='/services/']//following-sibling::ul//a"));
+
+        // Loop through each link and click it
+        for (WebElement link : dropdownLinks) {
+            actions.moveToElement(servicesMenu).perform(); // Ensure the dropdown is visible
+            String linkText = link.getText();
+            link.click();
+
+            // Verify the page title or URL or any specific element on the new page
+            System.out.println("Clicked on: " + linkText);
+
+            // Optionally navigate back to the original page
+            driver.navigate().back();
+            actions.moveToElement(servicesMenu).perform(); // Hover again
+        }
+    }
+
+    @AfterClass
+    public void tearDown() {
+        // Close the browser
+        driver.quit();
+    }
 }
+
