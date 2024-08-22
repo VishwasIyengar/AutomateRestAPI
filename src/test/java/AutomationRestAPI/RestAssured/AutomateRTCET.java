@@ -28,7 +28,7 @@ public class AutomateRTCET {
     @Test
     public void testClickAllServicesLinks() {
         // Locate the Services menu item
-        WebElement servicesMenu = driver.findElement(By.xpath("//a[normalize-space()='Services']"));
+        WebElement servicesMenu = driver.findElement(By.linkText("Services"));
 
         // Hover over the Services menu to display the dropdown
         Actions actions = new Actions(driver);
@@ -42,7 +42,9 @@ public class AutomateRTCET {
         }
 
         // Get all the links under the dropdown
-        List<WebElement> dropdownLinks = driver.findElements(By.xpath("//a[@href='/services/']//following-sibling::ul//a"));
+     // Get all the links under the dropdown
+        List<WebElement> dropdownLinks = driver.findElements(By.cssSelector(".dropdown-menu a"));
+
 
         // Loop through each link and click it
         for (WebElement link : dropdownLinks) {
