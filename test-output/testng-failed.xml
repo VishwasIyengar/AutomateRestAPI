@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="AutomationRestAPI.RestAssured.AutomateRTCET">
+      <class name="AutomationRestAPI.RestAssured.AmazonIPhonePurchaseTest">
         <methods>
+          <include name="tearDown"/>
           <include name="setUp"/>
-          <include name="testClickAllServicesLinks"/>
+          <include name="testIPhonePurchase"/>
         </methods>
-      </class> <!-- AutomationRestAPI.RestAssured.AutomateRTCET -->
+      </class> <!-- AutomationRestAPI.RestAssured.AmazonIPhonePurchaseTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
