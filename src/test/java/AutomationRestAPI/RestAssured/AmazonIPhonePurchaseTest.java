@@ -82,8 +82,8 @@ public class AmazonIPhonePurchaseTest {
             WebElement landMark = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//input[@id='address-ui-widgets-landmark'])[1]")));
             landMark.sendKeys("Beside Deffodil Kid Center");
 
-            WebElement city = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//input[@id='address-ui-widgets-enterAddressCity'])[1]")));
-            city.sendKeys("BENGALURU");
+        //    WebElement city = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//input[@id='address-ui-widgets-enterAddressCity'])[1]")));
+         //   city.sendKeys("BENGALURU");
 
             WebElement stateDropdown = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@id='address-ui-widgets-enterAddressStateOrRegion']//span[@class='a-button-text a-declarative']")));
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", stateDropdown);  // Scroll into view

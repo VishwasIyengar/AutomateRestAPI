@@ -1,18 +1,20 @@
 package AutomationRestAPI.RestAssured;
 
-import org.openqa.selenium.By;
+import org.openqa.selenium.By; 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import java.util.List;
+
+import java.time.Duration;
 
 public class AutomateRTCET {
 
-    private WebDriver driver;
+     WebDriver driver;
+    WebDriverWait wait;
 
     @BeforeClass
     public void setUp() {
@@ -20,46 +22,38 @@ public class AutomateRTCET {
     	 System.setProperty("webdriver.chrome.driver", "C:\\Users\\Hp\\Downloads\\chromedriver-win64\\chromedriver.exe");
          driver = new ChromeDriver();
          driver.manage().window().maximize();
+         wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         
         // Navigate to the website
         driver.get("https://rtctek.com/");
     }
 
     @Test
-    public void testClickAllServicesLinks() {
-        // Locate the Services menu item
-        WebElement servicesMenu = driver.findElement(By.linkText("Services"));
+    public void testClickAllServicesLinks() throws InterruptedException 
+    {   	
+    	WebElement aboutUs = driver.findElement(By.xpath("//a[normalize-space()='About Us']"));
+    	aboutUs.click();
+    	
+        WebElement services = driver.findElement(By.xpath("//a[normalize-space()='Services']"));
+        services.click();
+  	  
+  	  	WebElement industries = driver.findElement(By.xpath("//a[normalize-space()='Industries']"));
+  	  	industries.click();
+  	  
+  	  	WebElement knoledgeCenter = driver.findElement(By.xpath("//a[normalize-space()='Knowledge Center']"));
+  	  	knoledgeCenter.click();
+  	  
+  	  	WebElement getAQuote = driver.findElement(By.xpath("//li[@id='menu-item-10904']//a[normalize-space()='Get a Quote']"));
+  	  	getAQuote.click();
+  	  
+  	  	WebElement applyNow = driver.findElement(By.xpath("//span[@class='cus-nav']"));
+  	  	applyNow.click();
+  	  	
+  	  	Thread.sleep(6000);
+   }
+    
 
-        // Hover over the Services menu to display the dropdown
-        Actions actions = new Actions(driver);
-        actions.moveToElement(servicesMenu).perform();
 
-        // Wait for the dropdown to be visible
-        try {
-            Thread.sleep(2000);  // Better to use WebDriverWait in real cases
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        // Get all the links under the dropdown
-     // Get all the links under the dropdown
-        List<WebElement> dropdownLinks = driver.findElements(By.cssSelector(".dropdown-menu a"));
-
-
-        // Loop through each link and click it
-        for (WebElement link : dropdownLinks) {
-            actions.moveToElement(servicesMenu).perform(); // Ensure the dropdown is visible
-            String linkText = link.getText();
-            link.click();
-
-            // Verify the page title or URL or any specific element on the new page
-            System.out.println("Clicked on: " + linkText);
-
-            // Optionally navigate back to the original page
-            driver.navigate().back();
-            actions.moveToElement(servicesMenu).perform(); // Hover again
-        }
-    }
 
     @AfterClass
     public void tearDown() {

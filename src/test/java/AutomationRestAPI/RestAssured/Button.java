@@ -28,7 +28,7 @@ public class Button
         driver.get("https://demoqa.com/buttons");
 
         // Find buttons by their XPath
-        WebElement doubleclickButton = driver.findElement(By.xpath("(//button[normalize-space()='Double Click Me'])[1]"));
+        WebElement doubleclickButton = driver.findElement(By.xpath("//button[text() = 'Double Click Me']"));
 		
 		 WebElement rightClickButton = driver.findElement(By.xpath("//button[@id='rightClickBtn']"));
 	
