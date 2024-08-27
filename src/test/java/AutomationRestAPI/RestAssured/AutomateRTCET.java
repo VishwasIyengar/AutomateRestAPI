@@ -1,9 +1,10 @@
 package AutomationRestAPI.RestAssured;
 
-import org.openqa.selenium.By; 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -15,6 +16,7 @@ public class AutomateRTCET {
 
      WebDriver driver;
     WebDriverWait wait;
+   
 
     @BeforeClass
     public void setUp() {
@@ -23,14 +25,15 @@ public class AutomateRTCET {
          driver = new ChromeDriver();
          driver.manage().window().maximize();
          wait = new WebDriverWait(driver, Duration.ofSeconds(60));
-        
         // Navigate to the website
         driver.get("https://rtctek.com/");
+        
     }
 
     @Test
     public void testClickAllServicesLinks() throws InterruptedException 
-    {   	
+    {   
+    		
     	WebElement aboutUs = driver.findElement(By.xpath("//a[normalize-space()='About Us']"));
     	aboutUs.click();
     	
@@ -40,8 +43,8 @@ public class AutomateRTCET {
   	  	WebElement industries = driver.findElement(By.xpath("//a[normalize-space()='Industries']"));
   	  	industries.click();
   	  
-  	  	WebElement knoledgeCenter = driver.findElement(By.xpath("//a[normalize-space()='Knowledge Center']"));
-  	  	knoledgeCenter.click();
+  	  	WebElement knowledgeCenter = driver.findElement(By.xpath("//a[normalize-space()='Knowledge Center']"));
+  	  	knowledgeCenter.click();
   	  
   	  	WebElement getAQuote = driver.findElement(By.xpath("//li[@id='menu-item-10904']//a[normalize-space()='Get a Quote']"));
   	  	getAQuote.click();
