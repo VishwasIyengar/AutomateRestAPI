@@ -149,5 +149,6 @@ public class AmazonIPhonePurchaseTest {
     @AfterClass
     public void tearDown() {
         driver.quit();
+        
     }
 }
