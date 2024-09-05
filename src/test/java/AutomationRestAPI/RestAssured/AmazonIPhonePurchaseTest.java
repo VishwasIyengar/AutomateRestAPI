@@ -54,7 +54,7 @@ public class AmazonIPhonePurchaseTest {
             WebElement proceedToCheckOut = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@aria-labelledby='attach-sidesheet-checkout-button-announce'])[1]")));
             proceedToCheckOut.click();
 
-            retryingFindElement(By.xpath("//input[@id='ap_email_login']")).sendKeys("vishwassv1995@gmail.com");
+            retryingFindElement(By.xpath("//input[@name='email']")).sendKeys("vishwassv1995@gmail.com");
             WebElement continueButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@type='submit']")));
             continueButton.click();
 
